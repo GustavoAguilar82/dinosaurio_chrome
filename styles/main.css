@@ -116,16 +116,21 @@ body{
 
 .game-over{
     display: none;
-
     position: absolute;
     width: 100%;
-
-
     text-align: center;
     color: #7e928b;
     font-size: 30px;
     font-family: Verdana;
     font-weight: 700;
+    background: transparent;
+
+}
+.game-over:hover p{
+    display: none; 
+}
+.game-over:hover:before{  
+    content: "Volver al Inicio"; 
 }
 
 @keyframes animarDino{

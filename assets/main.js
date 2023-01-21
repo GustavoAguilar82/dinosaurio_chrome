@@ -86,6 +86,19 @@ function HandleKeyDown(ev){
     if(ev.keyCode == 32){
         Saltar();
     }
+    if(parado === true){ 
+        window.location.reload();  
+    }
+}
+
+function clickEvent(){
+    Saltar();
+    if(parado === true){ 
+        window.location.reload();  
+    }
+}
+function clickGameOver(){
+    window.location.href = "https://gustavoaguilar82.github.io/async-landing/";
 }
 
 function Saltar(){
@@ -208,10 +221,12 @@ function GanarPuntos() {
     suelo.style.animationDuration = (3/gameVel)+"s";
 }
 
+
 function GameOver() {
     Estrellarse();
     gameOver.style.display = "block";
 }
+
 
 function DetectarColision() {
     for (var i = 0; i < obstaculos.length; i++) {
