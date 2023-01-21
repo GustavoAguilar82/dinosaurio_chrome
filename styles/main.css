@@ -141,3 +141,22 @@ body{
         background-position-x: -252px;
     }
 }
+
+.tiempo{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    display: none;
+    top: 5px;
+    left: 15px;
+    z-index: 10;
+
+    color: #d48871;
+    font-family: Verdana;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+.tiempo::after{
+    content: " Seconds";
+}

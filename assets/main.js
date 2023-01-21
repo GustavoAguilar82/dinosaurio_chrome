@@ -1,6 +1,6 @@
-
 var time = new Date();
 var deltaTime = 0;
+var horaInicio = new Date();
 
 if(document.readyState === "complete" || document.readyState === "interactive"){
     setTimeout(Init, 1);
@@ -56,6 +56,7 @@ var velNube = 0.5;
 var contenedor;
 var dino;
 var textoScore;
+var textoTiempo;
 var suelo;
 var gameOver;
 
@@ -64,6 +65,7 @@ function Start() {
     suelo = document.querySelector(".suelo");
     contenedor = document.querySelector(".contenedor");
     textoScore = document.querySelector(".score");
+    textoTiempo = document.querySelector(".tiempo")
     dino = document.querySelector(".dino");
     document.addEventListener("keydown", HandleKeyDown);
 }
@@ -98,7 +100,7 @@ function clickEvent(){
     }
 }
 function clickGameOver(){
-    window.location.href = "https://gustavoaguilar82.github.io/async-landing/";
+    window.location.href = "https://gustavoaguilar82.github.io/async-landing/#projects-Section";
 }
 
 function Saltar(){
@@ -225,6 +227,10 @@ function GanarPuntos() {
 function GameOver() {
     Estrellarse();
     gameOver.style.display = "block";
+    var HoraFin = new Date();
+    var diferencia = (HoraFin - horaInicio)/1000;
+    textoTiempo.innerText = diferencia;
+    tiempoId.style.display = "block";
 }
 
 
@@ -252,3 +258,4 @@ function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft)
         (aRect.left + paddingLeft > (bRect.left + bRect.width))
     );
 }
+
